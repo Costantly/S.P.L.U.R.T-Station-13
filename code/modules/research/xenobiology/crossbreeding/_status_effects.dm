@@ -509,13 +509,13 @@
 /datum/status_effect/stabilized/purple/tick()
 	var/is_healing = FALSE
 	if(owner.getBruteLoss() > 0)
-		owner.adjustBruteLoss(-0.4)
+		owner.adjustBruteLoss(-20)
 		is_healing = TRUE
 	if(owner.getFireLoss() > 0)
-		owner.adjustFireLoss(-0.4)
+		owner.adjustFireLoss(-20)
 		is_healing = TRUE
 	if(owner.getToxLoss() > 0)
-		owner.adjustToxLoss(-0.4, forced = TRUE) //Slimepeople should also get healed.
+		owner.adjustToxLoss(-20, forced = TRUE) //Slimepeople should also get healed.
 		is_healing = TRUE
 	if(is_healing)
 		examine_text = "<span class='warning'>SUBJECTPRONOUN is regenerating slowly, purplish goo filling in small injuries!</span>"
