@@ -205,7 +205,7 @@
 /datum/quirk/hungry
 	name = "Hungry"
 	desc = "You find yourself unusually hungry. Gotta eat twice as much as normal."
-	value = -1
+	value = -20
 	gain_text = span_danger("You're starting to feel hungrier a lot faster.")
 	lose_text = span_notice("Your elevated craving for food begins dying down.")
 	medical_record_text = "Patient reports eating twice as many meals per day than usual for their species."
@@ -224,7 +224,7 @@
 /datum/quirk/thirsty
 	name = "Thirsty"
 	desc = "You find yourself unusually thirsty. Gotta drink twice as much as normal."
-	value = -1
+	value = -20
 	gain_text = span_danger("You're starting to feel thirstier a lot faster.")
 	lose_text = span_notice("Your elevated craving for water begins dying down.")
 	medical_record_text = "Patient reports drinking twice as many liquids per day than usual for their species."
