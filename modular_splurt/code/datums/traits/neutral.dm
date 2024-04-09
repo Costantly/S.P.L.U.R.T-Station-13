@@ -211,8 +211,8 @@
 	if(M.getorganslot("testicles"))
 		var/obj/item/organ/genital/testicles/T = M.getorganslot("testicles")
 		if(!increasedcum)
-			T.fluid_mult = 1.5 //Base is 0.133
-			T.fluid_max_volume *= 1.75
+			T.fluid_mult = 6 //Base is 0.133
+			T.fluid_max_volume *= 12
 			increasedcum = TRUE
 
 //You are a CIA agent.
