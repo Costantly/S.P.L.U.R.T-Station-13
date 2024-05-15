@@ -3,13 +3,13 @@
 ## OUT_OF_COMBAT_TIMER, PERCENT_REGENERATION_OUT_OF_COMBAT disabled - combat mode has been yanked from the codebase and made a UI toggle.
 
 ## Maximum stamina buffer
-BUFFER_MAX 25
+BUFFER_MAX 120
 
 ## Seconds until out of combat regen kicks in
 # OUT_OF_COMBAT_TIMER 15
 
 ## Base regen per second
-BASE_REGENERATION 3.5
+BASE_REGENERATION 20
 
 ## Regenerate this % of total buffer when out of combat
 # PERCENT_REGENERATION_OUT_OF_COMBAT

@@ -17,7 +17,7 @@ WEIGHTED_STATION_TRAITS
 
 # SM delamination
 # Comment to make the SM not explode
-SM_DELAMINATION
+#SM_DELAMINATION
 
 # Protolathe access
 # Comment to make protolathes and mechfabs use their access locks
@@ -25,7 +25,7 @@ PROTOLOCK_ALL_ACCESS
 
 # Character color limits
 # Uncomment to disallow players from making characters with colors that are too dark
-CHARACTER_COLOR_LIMITS
+#CHARACTER_COLOR_LIMITS
 
 # Jukebox song limit
 # Max amount of songs that can be added to the jukebox each round.

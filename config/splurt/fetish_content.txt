@@ -14,7 +14,7 @@ BELLY_MAX_SIZE_PREFS 10
 
 ## Multiplier for the points earned on a sex table ##
 ## Setting it to 0 obviously just makes it generate no points at all. ##
-#SEX_TABLE_MULTIPLIER 50
+SEX_TABLE_MULTIPLIER 200
 
 ## Enable old size penalty system ##
 ## If uncommented, it'll use citadel's original size penalties for mob sizes rather than the new calculated ones. ##
