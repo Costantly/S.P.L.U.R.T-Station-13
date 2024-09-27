@@ -6497,7 +6497,7 @@
 /obj/docking_port/stationary{
 	dwidth = 12;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "BoxStation emergency evac bay";
 	width = 32
 	},
@@ -7921,14 +7921,6 @@
 /obj/item/gun/energy/laser/practice,
 /turf/open/floor/plasteel,
 /area/science/research)
-"egR" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/yellow,
-/turf/open/floor/plasteel,
-/area/commons/fitness/pool)
 "ehx" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 8
@@ -8664,7 +8656,7 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -11331,7 +11323,7 @@
 /obj/structure/lattice,
 /obj/docking_port/stationary/random{
 	dir = 4;
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -13502,14 +13494,6 @@
 /obj/machinery/camera/autoname,
 /turf/open/floor/wood,
 /area/service/library)
-"gZR" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/red,
-/turf/open/floor/plasteel,
-/area/commons/fitness/pool)
 "gZX" = (
 /turf/open/floor/wood,
 /area/maintenance/bar)
@@ -13776,7 +13760,7 @@
 	dir = 8;
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -14226,7 +14210,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_ne";
+	shuttle_id = "syndicate_ne";
 	name = "northeast of station";
 	width = 23
 	},
@@ -14448,7 +14432,7 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/delta;
 	width = 7
@@ -18316,7 +18300,7 @@
 /obj/docking_port/stationary{
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "SS13: Auxiliary Dock, Station-Port";
 	width = 35
 	},
@@ -18569,6 +18553,14 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
+"jEM" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/turf/open/floor/plasteel,
+/area/commons/fitness/pool)
 "jEW" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -25489,7 +25481,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 15;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/box;
 	width = 7
@@ -27396,6 +27388,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
+"oud" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/commons/fitness/pool)
 "ouF" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/tile/green{
@@ -36680,7 +36683,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	id = "commonmining_home";
+	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
 	width = 7
@@ -41033,7 +41036,7 @@
 "vgV" = (
 /obj/structure/lattice,
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -47301,17 +47304,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/central/secondary)
-"ykK" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/commons/fitness/pool)
 "ykV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/landmark/start/scientist,
@@ -71404,9 +71396,9 @@ iiF
 iiF
 iiF
 fUT
-egR
-gZR
-ykK
+jEM
+jEM
+oud
 wVH
 ltO
 tQI

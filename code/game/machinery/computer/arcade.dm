@@ -67,7 +67,9 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 		/obj/item/clothing/mask/fakemoustache/italian = ARCADE_WEIGHT_RARE,
 		/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake = ARCADE_WEIGHT_TRICK,
-		/obj/item/clothing/suit/hooded/wintercoat/narsie/fake = ARCADE_WEIGHT_TRICK
+		/obj/item/clothing/suit/hooded/wintercoat/narsie/fake = ARCADE_WEIGHT_TRICK,
+
+		/obj/item/choice_beacon/pet = ARCADE_WEIGHT_RARE,
 ))
 
 /obj/machinery/computer/arcade
@@ -129,7 +131,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	if(prize_override)
 		override = TRUE
 
-	if(stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
+	if(machine_stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
 		return
 
 	var/empprize = null

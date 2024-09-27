@@ -270,9 +270,6 @@
 /datum/action/innate/swap_body/ui_host(mob/user)
 	return owner
 
-/datum/action/innate/swap_body/ui_state(mob/user)
-	return GLOB.not_incapacitated_state
-
 /datum/action/innate/swap_body/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -414,7 +411,7 @@
 
 ////////////////////////////////////////////////////////Round Start Slimes///////////////////////////////////////////////////////////////////
 
-/datum/species/jelly/roundstartslime
+/datum/species/jelly/slime/roundstartslime
 	name = "Xenobiological Slime Hybrid"
 	id = SPECIES_SLIME_HYBRID
 	limbs_id = SPECIES_SLIME

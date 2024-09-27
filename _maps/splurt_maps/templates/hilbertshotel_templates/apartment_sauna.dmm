@@ -68,7 +68,8 @@
 /area/hilbertshotel)
 "gS" = (
 /obj/machinery/vending/games{
-	shut_up = 1
+	shut_up = 1;
+	onstation = 0
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -388,7 +389,9 @@
 /area/hilbertshotel)
 "CY" = (
 /obj/machinery/light_switch/directional/east,
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	onstation = 0
+	},
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "CZ" = (
@@ -476,9 +479,9 @@
 /area/hilbertshotel)
 "Kz" = (
 /obj/structure/rack,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "KL" = (
@@ -493,7 +496,8 @@
 /area/hilbertshotel)
 "LP" = (
 /obj/machinery/vending/cigarette{
-	shut_up = 1
+	shut_up = 1;
+	onstation = 0
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -573,7 +577,8 @@
 "Ph" = (
 /obj/machinery/vending/dinnerware{
 	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4);
-	shut_up = 1
+	shut_up = 1;
+	onstation = 0
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
