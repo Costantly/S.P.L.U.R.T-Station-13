@@ -200,5 +200,11 @@
 #define SPLASHSCREEN_PLANE 90
 #define SPLASHSCREEN_RENDER_TARGET "SPLASHSCREEN_PLANE"
 
+// Admin popup layer
+#define ADMIN_POPUP_LAYER 1
+
+///Plane master controller keys
+#define PLANE_MASTERS_GAME "plane_masters_game"
+
 ///Layer for screentips
 #define SCREENTIP_LAYER 40

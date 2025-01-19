@@ -7,7 +7,7 @@
 	description = "Replaces the emergency shuttle with a random one."
 
 /datum/round_event_control/shuttle_catastrophe/canSpawnEvent(players, gamemode)
-	if(SSshuttle.emergency.name == "Build your own shuttle kit")
+	if(istype(SSshuttle.emergency, /obj/docking_port/mobile/emergency/shuttle_build))
 		return FALSE //don't undo manual player engineering, it also would unload people and ghost them, there's just a lot of problems
 	if(SSshuttle.emergency.in_flight())
 		return FALSE //ditto, problems

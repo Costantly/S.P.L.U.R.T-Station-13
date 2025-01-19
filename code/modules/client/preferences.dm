@@ -107,6 +107,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_style = MONO
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_ALT
+	var/list/alt_titles_preferences = list()
 
 	// Added by SPLURT (Custom Blood Color)
 	var/custom_blood_color = FALSE
@@ -132,7 +133,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/view_pixelshift = FALSE
 	var/enable_personal_chat_color = FALSE
 	var/personal_chat_color = "#ffffff"
-	var/list/alt_titles_preferences = list()
 	var/lust_tolerance = 100
 	var/sexual_potency = 15
 	//Sandstorm CHANGES END
@@ -356,7 +356,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///loadout stuff
 	var/gear_points = 10
 	var/list/gear_categories
-	var/list/loadout_data = list()
+	var/list/loadout_data
 	var/list/unlockable_loadout_data = list()
 	var/loadout_slot = 1 //goes from 1 to MAXIMUM_LOADOUT_SAVES
 	var/gear_category
@@ -533,7 +533,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				//calculate your gear points from the chosen item
 				gear_points = CONFIG_GET(number/initial_gear_points)
 				var/list/chosen_gear = loadout_data["SAVE_[loadout_slot]"]
-				if(chosen_gear)
+				if(islist(chosen_gear))
 					loadout_errors = 0
 					for(var/loadout_item in chosen_gear)
 						var/loadout_item_path = loadout_item[LOADOUT_ITEM]
@@ -1229,6 +1229,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</tr></table>"
 				if(LOADOUT_CHAR_TAB)
 					dat += "<table align='center' width='100%'>"
+					dat += "<tr><td colspan=4><center><b>Loadout slot</b></center></td></tr>"
+					dat += "<tr><td colspan=4><center>"
+					for(var/iteration in 1 to MAXIMUM_LOADOUT_SAVES)
+						dat += "<a [loadout_slot == iteration ? "class='linkOn'" : "href='?_src_=prefs;preference=gear;select_slot=[iteration]'"]>[iteration]</a>"
+					dat += "</center></td></tr>"
 					dat += "<tr><td colspan=4><center><i style=\"color: grey;\">You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
 					dat += "<tr><td colspan=4><center><b>"
 
@@ -1805,11 +1810,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			HTML += "<tr bgcolor='[job.selection_color]'><td width='60%' align='right'>"
 			var/rank = job.title
-			//Skyrat changes
 			var/displayed_rank = rank
 			if(job.alt_titles.len && (rank in alt_titles_preferences))
 				displayed_rank = alt_titles_preferences[rank]
-			//End of skyrat changes
 			lastJob = job
 			if(jobban_isbanned(user, rank))
 				HTML += "<font color=red>[rank]</font></td><td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"
@@ -1831,16 +1834,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if((job_preferences["[SSjob.overflow_role]"] == JP_LOW) && (rank != SSjob.overflow_role) && !jobban_isbanned(user, SSjob.overflow_role))
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
-			//Skyrat changes
 			var/rank_title_line = "[displayed_rank]"
 			if((rank in GLOB.command_positions) || (rank == "AI"))//Bold head jobs
 				rank_title_line = "<b>[rank_title_line]</b>"
 			if(job.alt_titles.len)
 				rank_title_line = "<a href='?_src_=prefs;preference=job;task=alt_title;job_title=[job.title]'>[rank_title_line]</a>"
+
 			else
 				rank_title_line = "<span class='dark'>[rank_title_line]</span>" //Make it dark if we're not adding a button for alt titles
 			HTML += rank_title_line
-			//End of skyrat changes
 
 			HTML += "</td><td width='40%'>"
 
@@ -2094,7 +2096,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				SetChoices(user)
 			if("setJobLevel")
 				UpdateJobPreference(user, href_list["text"], text2num(href_list["level"]))
-			//SKYRAT CHANGES
 			if("alt_title")
 				var/job_title = href_list["job_title"]
 				var/titles_list = list(job_title)
@@ -2110,7 +2111,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						alt_titles_preferences[job_title] = chosen_title
 				SetChoices(user)
-			//END OF SKYRAT CHANGES
 			else
 				SetChoices(user)
 		return TRUE
@@ -4148,6 +4148,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					qdel(offer_datum)
 
 	if(href_list["preference"] == "gear")
+		if(href_list["select_slot"])
+			var/chosen = text2num(href_list["select_slot"])
+			if(!chosen)
+				return
+			chosen = floor(chosen)
+			if(chosen > MAXIMUM_LOADOUT_SAVES || chosen < 1)
+				return
+			loadout_slot = chosen
 		if(href_list["clear_loadout"])
 			loadout_data["SAVE_[loadout_slot]"] = list()
 			save_preferences()

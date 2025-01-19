@@ -30,19 +30,19 @@
 /obj/item/toy/plush/nukeplushie/susplushie
 	name = "Suspect Plushie"
 	desc = "A stuffed toy that resembles a red space station employee. The tag claims red employee to be purely fictitious."
-	icon = 'modular_sand/icons/obj/plushes.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plushie_sus"
-	lefthand_file = 'modular_sand/icons/mob/inhands/misc/plushes_lefthand.dmi'
-	righthand_file = 'modular_sand/icons/mob/inhands/misc/plushes_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 	attack_verb = list("shot", "eat", "killed")
 
 /obj/item/toy/plush/nukeplushie/minisusplushie
 	name = "Mini Suspect Plushie"
 	desc = "A stuffed toy that resembles a red space station mini employee. The tag claims red employee to be purely fictitious."
-	icon = 'modular_sand/icons/obj/plushes.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "plushie_minisus"
-	lefthand_file = 'modular_sand/icons/mob/inhands/misc/plushes_lefthand.dmi'
-	righthand_file = 'modular_sand/icons/mob/inhands/misc/plushes_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 	attack_verb = list("mini-shot", "mini-eat", "mini-killed")
 
 /obj/item/toy/plush/shark

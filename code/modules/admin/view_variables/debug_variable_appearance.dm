@@ -59,24 +59,32 @@ GLOBAL_DATUM_INIT(pluto, /atom/movable, new /atom/movable(null))
 	if(beloved.vars.Find(var_name)) // If datums have it, get out
 		return FALSE
 	// If it is one of the two args on /image, yeet (I am sorry)
-	if(var_name == NAMEOF(src, realized_overlays))
+	if(var_name == "realized_overlays")
 		return FALSE
-	if(var_name == NAMEOF(src, realized_underlays))
+	if(var_name == "realized_underlays")
 		return FALSE
+
+#if (MIN_COMPILER_VERSION >= 515 && MIN_COMPILER_BUILD >= 1643)
+#warn X/Y/Z and contents are now fully unviewable on our supported versions, remove the below check
+#endif
+
+// lummy removed these from the the MA/image type
+#if (DM_VERSION <= 515 && DM_BUILD < 1643)
 	// Filtering out the stuff I know we don't care about
-	if(var_name == NAMEOF(src, x))
+	if(var_name == "x")
 		return FALSE
-	if(var_name == NAMEOF(src, y))
+	if(var_name == "y")
 		return FALSE
-	if(var_name == NAMEOF(src, z))
+	if(var_name == "z")
 		return FALSE
-	// Could make an argument for these but I think they will just confuse people, so yeeet
-#ifndef SPACEMAN_DMM // Spaceman doesn't believe in contents on appearances, sorry lads
+	#ifndef SPACEMAN_DMM // Spaceman doesn't believe in contents on appearances, sorry lads
 	if(var_name == NAMEOF(src, contents))
 		return FALSE
-#endif
+	#endif
 	if(var_name == NAMEOF(src, loc))
 		return FALSE
+#endif
+	// Could make an argument for this but I think they will just confuse people, so yeeet
 	if(var_name == NAMEOF(src, vis_contents))
 		return FALSE
 	return ..()

@@ -434,7 +434,7 @@
 /obj/structure/sign/poster/contraband/steppy
 	name = "Step On Me"
 	desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
-	icon_state = "steppy"
+	icon_state = "poster_steppy"
 
 /obj/structure/sign/poster/contraband/scum
 	name = "Security are Scum"
